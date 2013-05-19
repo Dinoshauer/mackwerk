@@ -1,0 +1,57 @@
+<!DOCTYPE>
+
+<html lang="en">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/bootstrap-responsive.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/font-awesome.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    {# Page specific CSS #}
+    {% block pageCss %}
+    {% endblock %}
+</head>
+    <body>
+    	<header id="blog-post-header" data-stellar-background-ratio="0.2" data-header-bg-img="{{ headerBG }}">
+            {# Icon #}
+            {% block pageIcon %}
+            {% endblock %}
+            <p class="lato-hairline head-text" data-stellar-ratio="1.2">
+	            {# Head text #}
+	            {% block headText %}
+	            {% endblock %}
+            </p>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('work') }}">Work</a></li>
+                    <li><a href="{{ url_for('photography') }}">Photo</a></li>
+                    <li class="glyph-logo">
+                        <a href="{{ url_for('home') }}"><p class="open-sans">&lt;/&gt;</p></a>
+                    </li>
+                    <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                    <li><a href="{{ url_for('aboutMe') }}">About me</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="border top"></section>
+    		{# Page content goes here! #}
+            {% block content %}
+            {% endblock %}
+        <section class="border bottom"></section>
+        <footer data-stellar-background-ratio="0.5" 
+        		data-stellar-horizontal-offset="-530" 
+        		data-stellar-vertical-offset="-200" 
+        		data-footer-bg-img="{{ headerBG }}">
+        </footer>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sons-of-obsidian"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.lorem.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+		{# Page specific JS #}
+	    {% block pageScripts %}
+	    {% endblock %}
+    </body>
+</html>

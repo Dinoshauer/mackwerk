@@ -1,0 +1,146 @@
+﻿<!DOCTYPE>
+
+<html lang="en">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/bootstrap-responsive.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/font-awesome.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    <style>
+    </style>
+</head>
+    <body>
+        <!--  data-stellar-horizontal-offset="-50" data-stellar-vertical-offset="-370" -->
+        <header data-stellar-background-ratio="0.2">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('work') }}">Work</a></li>
+                    <li><a href="{{ url_for('photography') }}">Photo</a></li>
+                    <li class="glyph-logo">
+                        <a href="{{ url_for('home') }}"><p class="open-sans">&lt;/&gt;</p></a>
+                    </li>
+                    <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                    <li><a href="{{ url_for('aboutMe') }}">About me</a></li>
+                </ul>
+            </nav>
+            <p class="lato-hairline head-text" data-stellar-ratio="1.2">
+                Hello.<br />
+                I am Kasper <span id="name" class="lato-u-bold">Mackwerk</span> Jacobsen.<br />
+                I code awesome things.
+            </p>
+        </header>
+        <section class="border top"></section>
+        <div class="container-fluid">
+            <!-- WORK SECTION -->
+            <div class="row-fluid glyph-holder work">
+                <div class="span12 text-center">
+                    <!--<i class="icon-desktop glyph"></i>-->
+                    <a href="Cases.html" class="lato-hairline">Work</a>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <ul class="thumbnails">
+                    <li class="span6">
+                        <div class="thumbnail">
+                            <a href="Case.html">
+                                <img src="http://placekitten.com/625/250" alt="">
+                                <p class="open-sans">Thumbnail caption...</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="span6">
+                        <div class="thumbnail">
+                            <a href="Case.html">
+                                <img src="http://placehold.it/625x250" alt="">
+                                <p class="open-sans">Thumbnail caption...</p>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- BLOG SECTION -->
+            <div class="row-fluid glyph-holder blog">
+                <div class="span12 text-center">
+                    <!--<i class="icon-desktop glyph"></i>-->
+                    <a href="Blog.html" class="lato-hairline">Blog posts</a>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <ul class="thumbnails">
+                    <li class="span6">
+                        <div class="thumbnail">
+                            <a href="BlogPost.html">
+                                <img src="http://placehold.it/625x210" alt="">
+                                <h3 class="lato-u-bold">Thumbnail label</h3>
+                                <p>Thumbnail caption...</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="span3">
+                        <div class="thumbnail">
+                            <a href="BlogPost.html">
+                                <img src="http://placehold.it/294x210" alt="">
+                                <h3 class="lato-u-bold">Thumbnail label</h3>
+                                <p>Thumbnail caption...</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="span3">
+                        <div class="thumbnail">
+                            <a href="BlogPost.html">
+                                <img src="http://placehold.it/294x210" alt="">
+                                <h3 class="lato-u-bold">Thumbnail label</h3>
+                                <p>Thumbnail caption...</p>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- PHOTOGRAPHY SECTION -->
+            <div class="row-fluid glyph-holder photo">
+                <div class="span12 text-center">
+                    <!--<i class="icon-desktop glyph"></i>-->
+                    <a href="#" class="lato-hairline">Photographies</a>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <ul class="thumbnails">
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/406x363" alt="">
+                        </div>
+                    </li>
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/406x363" alt="">
+                        </div>
+                    </li>
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/406x363" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="row-fluid">
+                <div class="span12 text-center">
+                    <a href="#top" class="open-sans" id="back-to-top" style="font-size: 1.3em; line-height: 4em;">
+                        <i class="icon-double-angle-up"></i> 
+                        Back to top
+                    </a>
+                </div>
+            </div>
+        </div>
+        <section class="border bottom"></section>
+        <footer data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="-530" data-stellar-vertical-offset="-200">
+        </footer>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sons-of-obsidian"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.lorem.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+    </body>
+</html>
