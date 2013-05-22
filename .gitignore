@@ -1,7 +1,8 @@
 # My own rules
 
 env
-_*
+
+_RES
 
 ###
 

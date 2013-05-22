@@ -2,13 +2,46 @@
 from flask import Flask, g, render_template, request, flash, redirect, url_for, jsonify
 
 app = Flask(__name__)
+app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 app.secret_key = 'mackwerk201'
 
 # Home
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('/home.htm')
+    work = []
+    workI = 0
+    while workI < 2:
+        case = {
+            'img':None,
+            'summary':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet tellus odio. Fusce lacinia, nisi et dignissim tempor, neque turpis convallis dui, eleifend luctus lorem risus ac lectus. Praesent aliquet gravida condimentum. Aenean luctus, enim sed placerat pellentesque, orci orci semper quam, sed posuere ligula turpis ut libero. Ut molestie nisl eu lorem tempor in egestas tortor rhoncus. Sed accumsan volutpat fringilla. Pellentesque vehicula ultrices nibh, at facilisis lorem tincidunt ac. In interdum sodales nulla nec hendrerit. Morbi rutrum, purus venenatis aliquam sollicitudin, mauris libero sollicitudin erat, ac fermentum sem enim eu augue. Vivamus pretium, quam id faucibus feugiat, libero elit elementum dolor, eget molestie leo libero id sem.',
+            'slug':'some-case-{0}'.format(workI)
+        }
+        work.append(case)
+        workI += 1
+
+    blog = []
+    blogI = 0
+    while blogI < 3:
+        post = {
+            'img':None,
+            'header':'Some blog post {0}'.format(blogI),
+            'summary':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet tellus odio. Fusce lacinia, nisi et dignissim tempor, neque turpis convallis dui, eleifend luctus lorem risus ac lectus. Praesent aliquet gravida condimentum. Aenean luctus, enim sed placerat pellentesque, orci orci semper quam, sed posuere ligula turpis ut libero. Ut molestie nisl eu lorem tempor in egestas tortor rhoncus. Sed accumsan volutpat fringilla. Pellentesque vehicula ultrices nibh, at facilisis lorem tincidunt ac. In interdum sodales nulla nec hendrerit. Morbi rutrum, purus venenatis aliquam sollicitudin, mauris libero sollicitudin erat, ac fermentum sem enim eu augue. Vivamus pretium, quam id faucibus feugiat, libero elit elementum dolor, eget molestie leo libero id sem.',
+            'slug':'some-blog-post-{0}'.format(blogI)
+        }
+        blog.append(post)
+        blogI += 1
+
+    photography = []
+    photoI = 0
+    while photoI < 7:
+        photo = {
+            'img':None,
+            'slug':'photo-{0}'.format(photoI)
+        }
+        photography.append(photo)
+        photoI += 1
+    return render_template('/home.htm', work = work, blog = blog, photography = photography)
 
 # Work
 @app.route('/work')
